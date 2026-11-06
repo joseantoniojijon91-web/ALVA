@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b1220">
 <title>ALVA 2.0 | Asistente Lógico Virtual de Álgebra</title>
 <style>
@@ -250,6 +250,54 @@ h1{margin:4px 0 0;font-size:clamp(25px,3vw,34px);line-height:1.15;letter-spacing
 .page:focus{outline:none}
 .mascot-wrap img{filter:var(--mascot-filter,none);transition:filter .25s}
 @media(max-width:760px){.tool-grid{grid-template-columns:1fr}.tool-grid .wide{grid-column:auto}.graph-wrap canvas{height:250px}.test-row{grid-template-columns:1fr}.sidebar nav{align-items:center}.nav-btn{min-height:40px}}
+</style>
+<style id="alva-responsive">
+html{-webkit-text-size-adjust:100%;scroll-padding-top:110px}
+body{min-width:320px;overflow-x:hidden}
+button,input,select,textarea{touch-action:manipulation}
+button,input,select{min-height:44px}
+textarea{max-width:100%;font:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #62d6c488;outline-offset:2px}
+.main,.page,.card,.grid>*{min-width:0}
+.main img,.main canvas,.main video{max-width:100%}
+.problem-list{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@media(max-width:900px){
+  .app{width:100%;min-width:0;grid-template-columns:minmax(0,1fr)}
+  .sidebar{width:100%;min-width:0;position:sticky;top:0;height:auto;padding:8px 12px;border-right:0;border-bottom:1px solid var(--line);gap:8px}
+  .brand{padding:2px 5px}
+  .brand-mark{width:38px;height:38px}
+  .sidebar .nav-label,.sidebar-foot{display:none}
+  .sidebar nav{display:flex;width:100%;min-width:0;max-width:100%;overflow-x:auto;overflow-y:hidden;gap:6px;padding:2px 1px 5px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:thin}
+  .sidebar .nav-btn{flex:none;min-height:44px;white-space:nowrap;padding:9px 12px;scroll-snap-align:start}
+  .sidebar .nav-btn .ico{width:auto}
+  .main{padding:18px max(14px,env(safe-area-inset-right)) calc(35px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left))}
+  .topbar{align-items:flex-start;flex-wrap:wrap}
+  .profile-stats{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .main{padding-top:14px}
+  .card{padding:14px;border-radius:16px}
+  .hero-main{padding:20px}
+  .hero-actions button{flex:1 1 100%}
+  .section-head{align-items:flex-start;flex-direction:column}
+  .section-head>button{width:100%}
+  .ohm-equation{grid-template-columns:1fr}
+  .grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat-pill{flex:1 1 auto;justify-content:center}
+  .toast{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));max-width:none}
+}
+@media(max-width:360px){
+  .grid.four{grid-template-columns:1fr}
+  .sidebar{padding-left:8px;padding-right:8px}
+  .sidebar .nav-btn{padding:8px 10px;font-size:12px}
+  .profile-stats{width:100%}
+}
+@media(hover:none){
+  button:hover{filter:none;transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
 </style>
 <script>
 window.addEventListener("DOMContentLoaded",function(){
